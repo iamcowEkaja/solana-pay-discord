@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redirecting...</title>
+    <script>
+      // Get the URL from the query parameters and decode it
+      const urlParams = new URLSearchParams(window.location.search);
+      const url = decodeURIComponent(urlParams.get('url'));
+
+      // Redirect the user to the decoded URL
+      window.location.href = url;
+    </script>
+  </head>
+  <body>
+    <p>If you are not redirected, <a href="#" onclick="redirectToURL()">click here</a>.</p>
+
+    <script>
+      function redirectToURL() {
+        // Get the URL from the query parameters and decode it
+        const urlParams = new URLSearchParams(window.location.search);
+        const url = decodeURIComponent(urlParams.get('url'));
+
+        // Redirect the user to the decoded URL
+        window.location.href = url;
+      }
+    </script>
+  </body>
+</html>
