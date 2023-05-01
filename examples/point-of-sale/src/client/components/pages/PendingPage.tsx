@@ -12,7 +12,8 @@ import css from './PendingPage.module.css';
 
 const PendingPage: NextPage = () => {
     const { symbol, connectWallet } = useConfig();
-    const { amount, reset } = usePayment();
+    const { amount, reset, url } = usePayment();
+
     const { publicKey } = useWallet();
     const { setVisible } = useWalletModal();
 
@@ -36,6 +37,7 @@ const PendingPage: NextPage = () => {
                 <div className={css.code}>
                     <QRCode />
                 </div>
+                <a className={css.amount} href={`${url}`}>Open Mobile Wallet</a>
                 <div className={css.scan}>Scan this code with your Solana Pay wallet</div>
                 <div className={css.confirm}>You'll be asked to approve the transaction</div>
             </div>
